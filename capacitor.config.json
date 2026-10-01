@@ -1,0 +1,9 @@
+{
+  "appId": "com.alphatech.solutions",
+  "appName": "AlphaTech Solutions",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": false
+  }
+}

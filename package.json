@@ -1,0 +1,26 @@
+{
+  "name": "alphatech-solutions",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AlphaTech Solutions marketing site",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --minify --target=es2020 --outfile=script.js",
+    "build:dev": "esbuild src/main.ts --bundle --sourcemap --target=es2020 --outfile=script.js",
+    "build:native": "npm run build && node scripts/build-native.mjs",
+    "android:add": "cap add android",
+    "android:sync": "npm run build:native && cap sync android",
+    "android:open": "cap open android",
+    "android:apk:debug": "npm run android:sync && node scripts/build-apk.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2"
+  }
+}
